@@ -1,0 +1,22 @@
+﻿<Window x:Class="Tetris.xaml.spalsh"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        Title="spalsh" Height="300" Width="400" WindowStyle="None" AllowsTransparency="True">
+    <Grid>
+        <Image Source="/Tetris;component/01.jpg" Stretch="Fill"/>
+        <Button x:Name="startMainwindows" Click="startMainwindows_Click" BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.168,-5.992">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Image Source="/Tetris;component/01.jpg" Stretch="fill"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

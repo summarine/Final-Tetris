@@ -1,0 +1,100 @@
+﻿<Window x:Class="Tetris.demon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="demon" 
+        KeyDown="Window_KeyDown"
+        WindowStartupLocation="CenterScreen"
+	    Width="600" Height="480" ResizeMode="NoResize">
+
+    <Grid x:Name="LayoutRoot">
+        <Image Source="picture/playbackground.png" Stretch="Fill"/>
+        <Grid Margin="20,10,267,17" x:Name="gameGrid">
+        </Grid>
+        <Label Content="Score" HorizontalAlignment="Left" Margin="403,152,0,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="26.667" RenderTransformOrigin="0.415,0.404"/>
+        <Image x:Name="PreviewImage" HorizontalAlignment="Left" Height="100" Margin="403,52,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.25,0.54"/>
+        <Label Content="Next" HorizontalAlignment="Left" Margin="403,0,0,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="26.667"/>
+
+        <Button x:Name="playbtn" Content="play" HorizontalAlignment="Left" Margin="392,286,0,0" 
+                VerticalAlignment="Top" Width="111" RenderTransformOrigin="0.36,-1.694" Click="StartBtn_Click" BorderBrush="#FFFFFFFF" Height="20">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Image Name="startBtnImg" Source="/Tetris;component/picture/start.png" >
+                                </Image>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+
+        </Button>
+        <Button x:Name="PauseBtn" Content="pause" HorizontalAlignment="Left" Margin="410,343,0,0"
+                VerticalAlignment="Top" Width="83" Click="PauseBtn_Click" BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.36,-1.69" Height="24">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Image Name="pauseBtnImg" Source="/Tetris;component/picture/pause.png" >
+                                </Image>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="StopBtn" Content="stop" HorizontalAlignment="Left" 
+                Margin="410,394,0,0" VerticalAlignment="Top" Width="83" Click="StopBtn_Click" BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.36,-1.694" Height="29">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Image Name="stopBtnImg" Source="/Tetris;component/picture/stop.png" >
+                                </Image>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label Content="Label" x:Name="Scoring_Board" HorizontalAlignment="Left" Margin="410,209,0,0" VerticalAlignment="Top" Height="34" Width="93" FontFamily="Segoe Script" FontSize="18.667"/>
+        <StackPanel Margin="242,0,-242,0">
+
+            <!-- The MediaElement control plays the sound. -->
+
+            <!-- The MediaElement control plays the sound. -->
+            <MediaElement x:Name="myMediaElement" />
+
+            <Button Width="50" Height="50" Content="Click to Hear a Sound!">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image x:Name="musicBtnImg" Source="picture/sound.png" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+
+                                <!-- Sound wave from this source is played when the button is clicked.-->
+                                <!--<MediaTimeline Source="C:\WINDOWS\Media\ringin.wav" Storyboard.TargetName="myMediaElement"  />-->
+                                <MediaTimeline Source="Resources\Audio\1.wav" Storyboard.TargetName="myMediaElement"    
+                    				RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</Window>

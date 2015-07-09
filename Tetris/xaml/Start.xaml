@@ -1,0 +1,56 @@
+﻿<Window x:Class="Tetris.xaml.Start"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Height="300" Width="400" 
+        Title="start"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Image Source="/Tetris;component/picture/menu.PNG" Stretch="Fill"/>
+        <Grid x:Name="replace"  HorizontalAlignment="Left" Height="200" Margin="235.334,10,0,0" VerticalAlignment="Top" Width="150">
+            <Button x:Name="singlebtn" Click="singlebtn_Click" Margin="3,10,10,0" 
+            		VerticalAlignment="Top" Height="50" BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.168,-5.992">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image x:Name="singleBtnImg" Source="/Tetris;component/picture/single.png" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="doublebtn" Click="doublebtn_Click"  Height="52" Margin="3,65,10,0" 
+            		BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.168,-5.992" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image x:Name="doubleBtnImg" Source="/Tetris;component/picture/double.png" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="aibtn" Click="aibtn_Click"  Margin="0,129,13,31" 
+            		BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.168,-5.992" >
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Image x:Name="aiBtnImg" Source="/Tetris;component/picture/AI.png" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

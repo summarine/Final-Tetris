@@ -1,0 +1,26 @@
+﻿<Window x:Class="Tetris.tempwin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="tempwin" Height="300" Width="300">
+    <Grid>
+        <Image Source="playbackground.jpg"  Stretch="Fill"/>
+        <Button x:Name="Connectbtn" Click="Connectbtn_Click_1" HorizontalAlignment="Left" Margin="96,163,0,0"
+                VerticalAlignment="Top" Width="110" BorderBrush="#FFFFFFFF" RenderTransformOrigin="0.168,-5.992" Height="26">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Image Name="startBtnImg" Source="picture/connect.png" >
+                                </Image>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <TextBox x:Name="IPaddress" HorizontalAlignment="Left" Height="25" Margin="72,103,0,0" TextWrapping="Wrap" Text="please enter your IP" VerticalAlignment="Top" Width="160"/>
+
+    </Grid>
+</Window>

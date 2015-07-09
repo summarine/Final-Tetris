@@ -1,0 +1,19 @@
+﻿<Window x:Class="Tetris.Ratingwindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ratingwindow" Height="300" Width="300" >
+    <Grid>
+        <Image Source="picture/积分榜.png" Stretch="Fill"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="39*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="ratingwindow" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="259" Width="282" FontSize="24" Grid.RowSpan="5"><Run Text=""/><LineBreak/><Run/></TextBlock>
+       
+    </Grid>
+    </Grid>
+</Window>
